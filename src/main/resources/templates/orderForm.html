@@ -22,19 +22,19 @@
   <br/>
   <label for="deliveryStreet">Street address: </label>
   <input type="text" th:field="*{deliveryStreet}"/>
-  <span class="deliveryStreet" th:if="${#fields.hasErrors('deliveryStreet')}" th:errors="*{deliveryStreet}"> Delivery Name Error </span>
+  <span class="validationError" th:if="${#fields.hasErrors('deliveryStreet')}" th:errors="*{deliveryStreet}"> Delivery Name Error </span>
   <br/>
   <label for="deliveryCity">City: </label>
   <input type="text" th:field="*{deliveryCity}"/>
-  <span class="deliveryCity" th:if="${#fields.hasErrors('deliveryStreet')}" th:errors="*{deliveryStreet}"> Delivery Name Error </span>
+  <span class="ValidationError" th:if="${#fields.hasErrors('deliveryCity')}" th:errors="*{deliveryCity}"> Delivery Name Error </span>
   <br/>
   <label for="deliveryState">State: </label>
   <input type="text" th:field="*{deliveryState}"/>
-  <span class="deliveryState" th:if="${#fields.hasErrors('deliveryState')}" th:errors="*{deliveryStreet}"> Delivery Name Error </span>
+  <span class="ValidationError" th:if="${#fields.hasErrors('deliveryState')}" th:errors="*{deliveryState}"> Delivery Name Error </span>
   <br/>
   <label for="deliveryZip">Zip code: </label>
   <input type="text" th:field="*{deliveryZip}"/>
-  <span class="deliveryCity" th:if="${#fields.hasErrors('deliveryZip')}" th:errors="*{deliveryStreet}"> Delivery Name Error </span>
+  <span class="ValidationError" th:if="${#fields.hasErrors('deliveryZip')}" th:errors="*{deliveryZip}"> Delivery Name Error </span>
   <br/>
   <h3>Here’s how I’ll pay...</h3>
   <label for="ccNumber">Credit Card #: </label>
@@ -43,11 +43,11 @@
   <br/>
   <label for="ccExpiration">Expiration: </label>
   <input type="text" th:field="*{ccExpiration}"/>
-  <span class="validationError" th:if="${#fields.hasErrors('ccExpiration')}" th:errors="*{ccNumber}"> CC Num Error </span>
+  <span class="validationError" th:if="${#fields.hasErrors('ccExpiration')}" th:errors="*{ccExpiration}"> CC Num Error </span>
   <br/>
   <label for="ccCVV">CVV: </label>
   <input type="text" th:field="*{ccCVV}"/>
-  <span class="validationError" th:if="${#fields.hasErrors('ccCVV')}" th:errors="*{ccNumber}"> CC Num Error </span>
+  <span class="validationError" th:if="${#fields.hasErrors('ccCVV')}" th:errors="*{ccCVV}"> CC Num Error </span>
   <br/>
   <input type="submit" value="Submit Order"/>
 </form>
