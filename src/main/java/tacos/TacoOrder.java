@@ -2,35 +2,43 @@ package tacos;
 import javax.validation.constraints.Digits;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.Pattern;
+import javax.validation.constraints.Size;
+
 import org.hibernate.validator.constraints.CreditCardNumber;
 
 import java.io.Serializable;
-import java.util.Date;
 import java.util.List;
 import java.util.ArrayList;
 import lombok.Data;
+import org.springframework.data.annotation.Id;
+import org.springframework.data.relational.core.mapping.Table;
 
 @Data
+@Table
 public class TacoOrder implements Serializable {
 
     private static final long serialVersionUID = 1L;
 
+    @Id
     private Long id;
 
-    private Date placedAt;
-
     @NotBlank(message="Delivery name is required")
+    @Size(max = 50)
     private String deliveryName;
 
     @NotBlank(message="Street is required")
+    @Size(max = 50)
     private String deliveryStreet;
 
+    @Size(max = 50)
     @NotBlank(message="City is required")
     private String deliveryCity;
 
+    @Size(max = 2)
     @NotBlank(message="State is required")
     private String deliveryState;
 
+    @Size(max = 10)
     @NotBlank(message="Zip code is required")
     private String deliveryZip;
 
