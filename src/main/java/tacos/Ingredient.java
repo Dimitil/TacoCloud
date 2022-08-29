@@ -2,12 +2,13 @@ package tacos;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
-import org.springframework.data.annotation.Id;
-import org.springframework.data.relational.core.mapping.Table;
+
+import javax.persistence.Entity;
+import javax.persistence.Id;
 
 @Data
+@Entity
 @AllArgsConstructor
-@Table
 public class Ingredient {
 
     @Id
