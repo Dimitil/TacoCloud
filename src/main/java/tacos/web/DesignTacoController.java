@@ -1,5 +1,6 @@
 package tacos.web;
 
+import java.util.Arrays;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -70,7 +71,7 @@ public class DesignTacoController {
             List<Ingredient> ingredients, Type type) {
         return ingredients
                 .stream()
-                .filter(x -> x.getType().equals(type))
+                .filter(x -> x.getType().equalsIgnoreCase(type.toString().toLowerCase()))
                 .collect(Collectors.toList());
     }
 }
